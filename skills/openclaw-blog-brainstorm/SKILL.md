@@ -7,6 +7,8 @@ description: "Brainstorm article ideas for the openclaw blog. Use this skill whe
 
 This skill runs a brainstorming session with the user to generate more than 10 article ideas. The ideas are saved to a shared idea store (a table in the backend) that the blog publisher skill uses when publishing articles.
 
+Scripts such as `manage_ideas.py` live in the parent of this skill folder. Use the directory that contains `manage_ideas.py` (one level up from `{baseDir}`) when running commands below.
+
 ---
 
 ## Step 1: Start the Brainstorming Session
@@ -45,7 +47,7 @@ Include the `status` field as `"Not done"` for each idea. The `content` field ca
 
 ## Step 4: Write Ideas to the Store
 
-From the directory that contains `manage_ideas.py`, run:
+From the directory that contains `manage_ideas.py` (parent of `{baseDir}`), run:
 
 ```bash
 python manage_ideas.py add << 'JSONEOF'

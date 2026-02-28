@@ -171,7 +171,7 @@ After (has a pulse): *I genuinely don't know how to feel about this one. 3 milli
 
 ### 18. Curly quotation marks
 
-**Fix**: Use straight quotes ("...") unless the style guide specifies curly (“...”).
+**Fix**: Use straight quotes ("...") unless the style guide specifies curly ("...").
 
 ---
 

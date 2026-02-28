@@ -7,11 +7,13 @@ description: "Write and publish a new blog article to the openclaw website from 
 
 This skill publishes articles from the idea queue: it picks the next incomplete idea, writes an SEO-optimized article, posts it via API, and marks the idea done. If the queue is empty, it prompts the user to run the brainstorm skill.
 
+Scripts such as `manage_ideas.py` and `post_blog.py` live in the parent of this skill folder. Use the directory that contains them (one level up from `{baseDir}`) when running commands below.
+
 ---
 
 ## Step 0: Check the Idea Queue
 
-From the directory that contains `manage_ideas.py`, run:
+From the directory that contains `manage_ideas.py` (parent of `{baseDir}`), run:
 
 ```bash
 python manage_ideas.py next
@@ -62,7 +64,7 @@ Once the article is written, format it as the following JSON structure:
 
 ## Step 4: Post to the API Using `post_blog.py`
 
-Send the JSON from Step 3 directly to the API by piping it into `post_blog.py` (no need to save a file). From the directory that contains `post_blog.py`, run:
+Send the JSON from Step 3 directly to the API by piping it into `post_blog.py`. From the directory that contains `post_blog.py` (parent of `{baseDir}`), run:
 
 ```bash
 python post_blog.py << 'JSONEOF'
