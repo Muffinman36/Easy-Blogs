@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Blog Posts'
+  title: 'Hack USU'
 })
 
 const route = useRoute()
@@ -25,7 +25,7 @@ function goToPage(page: number) {
 
 <template>
   <div class="container">
-    <h1>Blog Posts</h1>
+    <h1>Hack USU</h1>
 
     <div v-if="error" class="error">
       Failed to load blogs. Please try again later.
