@@ -5,5 +5,8 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    backendUrl: 'http://backend:8000'
+  }
 })

@@ -16,6 +16,17 @@ services:
       timeout: 5s
       retries: 5
 
+  frontend:
+    build:
+      context: ../front-end
+    restart: unless-stopped
+    environment:
+      NUXT_BACKEND_URL: http://backend:8000
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
   backend:
     build:
       context: ../backend

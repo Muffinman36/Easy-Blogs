@@ -11,7 +11,11 @@ const currentPage = computed(() => Number(route.query.page) || 1)
 const { data, error } = await useAsyncData(
   `blogs-page-${currentPage.value}`,
   () => $fetch('/api/blogs', { query: { page: currentPage.value } }),
-  { watch: [currentPage] }
+  {
+    watch: [currentPage],
+    getCachedData: (key, nuxtApp) =>
+      nuxtApp.isHydrating ? (nuxtApp.payload.data as Record<string, unknown>)[key] : undefined,
+  }
 )
 
 function goToPage(page: number) {
