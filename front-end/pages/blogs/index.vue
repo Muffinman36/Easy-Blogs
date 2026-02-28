@@ -8,7 +8,7 @@ const router = useRouter()
 
 const currentPage = computed(() => Number(route.query.page) || 1)
 
-const { data, error } = await useAsyncData(
+const { data, error, refresh } = await useAsyncData(
   `blogs-page-${currentPage.value}`,
   () => $fetch('/api/blogs', { query: { page: currentPage.value } }),
   {
@@ -17,6 +17,16 @@ const { data, error } = await useAsyncData(
       nuxtApp.isHydrating ? (nuxtApp.payload.data as Record<string, unknown>)[key] : undefined,
   }
 )
+
+let pollInterval: ReturnType<typeof setInterval>
+
+onMounted(() => {
+  pollInterval = setInterval(() => refresh(), 3000)
+})
+
+onUnmounted(() => {
+  clearInterval(pollInterval)
+})
 
 function goToPage(page: number) {
   router.push({ query: { page } })
