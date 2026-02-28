@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Test Idea 1",
+    "content": "A test",
+    "status": "Done"
+  },
+  {
+    "title": "Test Idea 2",
+    "content": "",
+    "status": "Not done"
+  }
+]
